@@ -1,0 +1,47 @@
+
+## Project Management API
+Este es un proyecto de API RESTful para administrar tareas de proyectos de software. La API permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre tareas que incluyen información como título, descripción, estado y fecha límite.
+
+``` 
+Tabla de contenidos
+Descripción
+Tecnologías
+Características
+Configuración del Entorno
+Instalación
+Uso
+Estructura del Proyecto
+Endpoints
+Ejemplo de Respuesta
+Descripción
+Este proyecto utiliza Node.js, Express y MongoDB para administrar tareas de manera sencilla. Se proporciona un entorno completo de desarrollo usando Docker y docker-compose, que permite ejecutar la API y MongoDB en contenedores.
+
+Tecnologías
+Node.js
+Express
+MongoDB
+Docker
+Docker Compose
+
+Características
+Crear, obtener, actualizar y eliminar tareas de proyectos.
+Conexión a MongoDB en un contenedor.
+Contenedor Docker para facilitar la ejecución y configuración.
+Configuración del Entorno
+Configura las variables de entorno en el archivo .env:
+
+MONGODB_URI=mongodb://mongo:27017/tareas_db
+PORT=3000
+
+Construye y ejecuta los contenedores:
+docker-compose up --build
+
+Enpoints:
+- Crear una tarea: POST [http://localhost:3000/api/tareas](http://localhost:3000/api/tareas)
+- Obtener todas las tareas: GET [http://localhost:3000/api/tareas](http://localhost:3000/api/tareas)
+- Obtener una tarea específica: GET [http://localhost:3000/api/tareas/:id](http://localhost:3000/api/tareas/:id)
+- Actualizar una tarea: PATCH [http://localhost:3000/api/tareas/:id](http://localhost:3000/api/tareas/:id)
+- Eliminar una tarea: DELETE [http://localhost:3000/api/tareas/:id](http://localhost:3000/api/tareas/:id)
+
+Para detener los contenedores, puedes usar:
+docker-compose down
